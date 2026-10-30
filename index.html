@@ -1,129 +1,175 @@
+
 <!doctype html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Julieta · Mi Bat Mitzvá</title>
+<title>Julieta | Mi Bat Mitzvá</title>
 <style>
-:root{--rose:#986e69;--ink:#555c50;--cream:#f8eee6}
+:root{--rose:#946e70;--ink:#555a52;--paper:#faf5ef;--line:#d9bdb6}
 *{box-sizing:border-box}
-body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,serif;text-align:center}
-main{max-width:660px;margin:auto;background:#f9f1e9;min-height:100vh;box-shadow:0 0 50px #765e5030}
-.hero img{width:100%;display:block}
-.section{padding:55px 26px;border-top:1px solid #d6b8ae}
-h1,h2{color:var(--rose);font-weight:400;letter-spacing:.13em}
-h2{font-size:1.55rem}
-p{line-height:1.7}
-label{display:block;text-align:left;margin:18px 0 8px;font-family:Arial,sans-serif;font-size:14px}
-input,select{width:100%;padding:14px;border:1px solid #c9b1a7;background:#fffaf6;border-radius:4px;font-size:16px;color:#424a40}
-button,.map{display:inline-block;background:var(--rose);color:white;border:0;border-radius:4px;padding:15px 26px;font-size:15px;text-decoration:none;cursor:pointer;margin-top:20px}
-button:disabled{opacity:.5}
-.note{font-size:13px;font-family:Arial,sans-serif}
-.hide{display:none}
-.star{font-size:36px;color:var(--rose)}
-.divider{width:70px;border-top:1px solid var(--rose);margin:28px auto}
+html{scroll-behavior:smooth}
+body{margin:0;background:#eae1d9;color:var(--ink);font-family:Georgia,serif}
+main{max-width:740px;margin:auto;background:var(--paper);min-height:100vh}
+nav{position:sticky;top:0;z-index:5;display:flex;justify-content:space-around;gap:8px;background:#faf5eff5;padding:18px 10px;border-bottom:1px solid var(--line)}
+nav a{color:var(--rose);text-decoration:none;font:600 11px Arial,sans-serif;letter-spacing:1.6px}
+section{scroll-margin-top:65px}
+.hero img{display:block;width:100%;height:auto}
+.introcopy{text-align:center;padding:38px 26px 50px}
+.section{padding:55px 25px;text-align:center;border-top:1px solid #ead9d0}
+h2,h3{font-weight:400;color:var(--rose)}
+h2{font-size:30px;letter-spacing:2px}
+h3{font-size:25px;margin:8px 0 16px}
+.sub{font-size:15px;line-height:1.8;margin:0 auto 32px;max-width:440px}
+.event{border:1px solid var(--line);border-radius:20px;padding:27px 18px;margin:20px auto;max-width:490px;background:#fffaf6}
+.date{font:600 12px Arial,sans-serif;letter-spacing:1.5px;color:var(--rose)}
+.event p{line-height:1.7}
+.link{color:var(--rose);text-underline-offset:4px}
+.formwrap{max-width:490px;margin:auto;text-align:left}
+.formwrap label{display:block;font:500 14px Arial,sans-serif;margin:20px 0 8px}
+.formwrap input,.formwrap select{display:block;width:100%;border:1px solid #d6bcb3;border-radius:7px;padding:13px;background:white;font-size:16px}
+.hide{display:none!important}
+button{border:0;border-radius:7px;background:var(--rose);color:white;font:600 14px Arial,sans-serif;padding:16px 24px;cursor:pointer;width:100%;margin-top:25px}
+button:disabled{opacity:.55}
+.small{font:12px/1.7 Arial,sans-serif;color:#77716c}
+.thankyou{border:1px solid var(--line);border-radius:20px;padding:32px 22px;text-align:center;background:#fffaf6}
+.foot{text-align:center;padding:45px 20px;color:var(--rose)}
 </style>
 </head>
 <body>
 <main>
-<div class="hero"><img src="invitacion.jpg" alt="Invitación al Bat Mitzvá de Julieta"></div>
-<section class="section">
-<div class="star">✡</div>
-<h2>¡Me encantaría que me acompañes!</h2>
-<p>Quiero compartir con vos este momento tan especial.</p>
-<div class="divider"></div>
-<h2>Programa</h2>
-<p><strong>Tefilín y desayuno</strong><br>Jueves 10 de diciembre de 2026 · 8:15 hs</p>
-<p><strong>Kabalat Shabat</strong><br>Viernes 11 de diciembre de 2026 · 19:00 hs</p>
-<p>Templo Amijai<br>Arribeños 2355, CABA</p>
-<a class="map" href="https://www.google.com/maps/search/?api=1&query=Arribe%C3%B1os+2355+CABA" target="_blank" rel="noopener">Cómo llegar</a>
+<nav>
+<a href="#intro">INTRO</a>
+<a href="#programa">EL PROGRAMA</a>
+<a href="#asistencia">ASISTENCIA</a>
+</nav>
+
+<section id="intro" class="hero">
+<img src="invitacion.jpg" alt="Invitación floral al Bat Mitzvá de Julieta">
+<div class="introcopy">
+<p>Me encantaría compartir con vos este momento tan especial.</p>
+<a class="link" href="#programa">Conocé el programa ↓</a>
+</div>
 </section>
-<section class="section">
-<h2>Confirmación · Tefilín y desayuno</h2>
-<p>Para organizar el desayuno, te pedimos que confirmes tu asistencia.</p>
+
+<section id="programa" class="section">
+<h2>TE ESPERAMOS</h2>
+<p class="sub">Para celebrar juntos el Bat Mitzvá de Julieta</p>
+<article class="event">
+<div class="date">JUEVES 10 DE DICIEMBRE · 2026</div>
+<h3>Tefilín y desayuno</h3>
+<p>8:15 hs</p>
+<p>Templo Amijai<br>Arribeños 2355, CABA</p>
+<a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Arribe%C3%B1os+2355+CABA" target="_blank">Cómo llegar</a>
+</article>
+<article class="event">
+<div class="date">VIERNES 11 DE DICIEMBRE · 2026</div>
+<h3>Kabalat Shabat</h3>
+<p>19:00 hs</p>
+<p>Templo Amijai<br>Arribeños 2355, CABA</p>
+<a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Arribe%C3%B1os+2355+CABA" target="_blank">Cómo llegar</a>
+</article>
+</section>
+
+<section id="asistencia" class="section">
+<h2>CONFIRMÁ TU ASISTENCIA</h2>
+<p class="sub">Para organizar el desayuno del jueves, te pedimos que completes estos datos.</p>
+<div class="formwrap">
 <form id="rsvp">
 <label for="nombre">Nombre y apellido</label>
 <input id="nombre" required maxlength="120" placeholder="Tu nombre completo">
+
 <label for="asiste">¿Asistís al Tefilín y desayuno?</label>
 <select id="asiste" required>
 <option value="">Seleccionar</option>
-<option value="Sí">Sí, asistiré</option>
-<option value="No">No podré asistir</option>
+<option value="Sí">Sí</option>
+<option value="No">No</option>
 </select>
+
 <div id="cantidad-wrap" class="hide">
 <label for="cantidad">Cantidad total de personas (incluyéndote)</label>
-<input type="number" id="cantidad" min="1" max="30" value="1">
+<input id="cantidad" type="number" min="1" max="30" value="1">
 </div>
-<div id="escuela-wrap" class="hide">
-<label for="escuela">¿Sos del Buber?</label>
-<select id="escuela">
+
+<div id="buber-wrap" class="hide">
+<label for="buber">¿Sos del Buber?</label>
+<select id="buber">
 <option value="">Seleccionar</option>
 <option value="Sí">Sí</option>
 <option value="No">No</option>
 </select>
 </div>
+
 <div id="combi-wrap" class="hide">
-<label for="combi">¿Volvés en combi a la escuela?</label>
+<label for="combi">¿Volvés en Combi al Buber después del desayuno?</label>
 <select id="combi">
 <option value="">Seleccionar</option>
 <option value="Sí">Sí</option>
 <option value="No">No</option>
 </select>
 </div>
-<button type="submit" id="send">Enviar confirmación</button>
-<p id="status" role="status" class="note"></p>
+
+<button id="send" type="submit">Enviar confirmación</button>
+<p id="status" class="small"></p>
 </form>
-<p class="note">Los datos se utilizan únicamente para organizar el desayuno y el regreso en combi.</p>
-<div class="divider"></div>
-<p>¡Te espero!<br><strong>Julieta ♡</strong></p>
+
+<div id="thanks" class="thankyou hide">
+<h3>¡Gracias por confirmar! ♡</h3>
+<p>Tu respuesta fue enviada.</p>
+<p>¡Nos vemos en el Bat de Julieta!</p>
+</div>
+<p class="small">Usaremos estos datos solamente para organizar el desayuno y el regreso en Combi.</p>
+</div>
 </section>
+<footer class="foot">Con cariño, Julieta ♡</footer>
 </main>
+
 <script>
 const ENDPOINT='https://script.google.com/macros/s/AKfycbzqZQHwDwOUGILHeo8XhG66xL-Jq1-JCLhO8GkJnvq5RdWoO4hTjgKwe-5m8x1MKFUF/exec';
-const a=document.getElementById('asiste');
-const c=document.getElementById('cantidad');
-const co=document.getElementById('combi');
-const es=document.getElementById('escuela');
-function update(){
- const yes=a.value==='Sí';
- document.getElementById('cantidad-wrap').classList.toggle('hide',!yes);
- c.required=yes;
- document.getElementById('escuela-wrap').classList.toggle('hide',!yes);
- es.required=yes;
- const buber=yes&&es.value==='Sí';
- document.getElementById('combi-wrap').classList.toggle('hide',!buber);
- co.required=buber;
- if(!buber)co.value='';
+const byId=id=>document.getElementById(id);
+const asiste=byId('asiste'),buber=byId('buber'),combi=byId('combi'),cantidad=byId('cantidad');
+
+function refresh(){
+ const yes=asiste.value==='Sí';
+ byId('cantidad-wrap').classList.toggle('hide',!yes);
+ byId('buber-wrap').classList.toggle('hide',!yes);
+ cantidad.required=yes;
+ buber.required=yes;
+ const isBuber=yes&&buber.value==='Sí';
+ byId('combi-wrap').classList.toggle('hide',!isBuber);
+ combi.required=isBuber;
+ if(!isBuber)combi.value='';
 }
-a.addEventListener('change',update);
-es.addEventListener('change',update);
-document.getElementById('rsvp').addEventListener('submit',async ev=>{
- ev.preventDefault();
- const status=document.getElementById('status');
- const btn=document.getElementById('send');
+asiste.addEventListener('change',refresh);
+buber.addEventListener('change',refresh);
+
+byId('rsvp').addEventListener('submit',async e=>{
+ e.preventDefault();
+ const btn=byId('send'),status=byId('status');
  btn.disabled=true;
  status.textContent='Enviando…';
  const payload={
-  nombre:document.getElementById('nombre').value.trim(),
-  asiste:a.value,
-  cantidad:a.value==='Sí'?Number(c.value):0,
-  buber:a.value==='Sí'?es.value:'No aplica',
-  combi:a.value==='Sí'&&es.value==='Sí'?co.value:'No aplica'
+ nombre:byId('nombre').value.trim(),
+ asiste:asiste.value,
+ cantidad:asiste.value==='Sí'?Number(cantidad.value):0,
+ buber:asiste.value==='Sí'?buber.value:'No aplica',
+ combi:asiste.value==='Sí'&&buber.value==='Sí'?combi.value:'No aplica'
  };
  try{
-  await fetch(ENDPOINT,{
-   method:'POST',
-   mode:'no-cors',
-   headers:{'Content-Type':'text/plain;charset=utf-8'},
-   body:JSON.stringify(payload)
-  });
-  status.textContent='Solicitud enviada. Verificaremos la recepción.';
-  ev.target.reset();
-  update();
- }catch{
-  status.textContent='No se pudo enviar. Intentá nuevamente.';
- }finally{btn.disabled=false}
+ await fetch(ENDPOINT,{
+ method:'POST',
+ mode:'no-cors',
+ headers:{'Content-Type':'text/plain;charset=utf-8'},
+ body:JSON.stringify(payload)
+ });
+ byId('rsvp').classList.add('hide');
+ byId('thanks').classList.remove('hide');
+ }catch(err){
+ status.textContent='No se pudo enviar. Intentá nuevamente.';
+ btn.disabled=false;
+ }
 });
 </script>
 </body>
 </html>
+
