@@ -12,11 +12,12 @@ html{scroll-behavior:smooth}
 body{margin:0;background:#eae1d9;color:var(--ink);font-family:Georgia,serif}
 main{max-width:740px;margin:auto;background:var(--paper);min-height:100vh}
 nav{position:sticky;top:0;z-index:5;display:flex;justify-content:space-around;gap:8px;background:#faf5eff5;padding:18px 10px;border-bottom:1px solid var(--line)}
-nav a{color:var(--rose);text-decoration:none;font:600 11px Arial,sans-serif;letter-spacing:1.6px}
+nav a{color:var(--rose);text-decoration:none;font:600 11px Arial,sans-serif;letter-spacing:1.6px;padding-bottom:5px;border-bottom:2px solid transparent}
+nav a.active{border-bottom-color:var(--rose)}
 section{scroll-margin-top:65px}
 .hero img{display:block;width:100%;height:auto}
 .introcopy{text-align:center;padding:38px 26px 50px}
-.section{padding:55px 25px;text-align:center;border-top:1px solid #ead9d0}
+.section{padding:25px 25px 40px;text-align:center;border-top:1px solid #ead9d0}
 h2,h3{font-weight:400;color:var(--rose)}
 h2{font-size:30px;letter-spacing:2px}
 h3{font-size:25px;margin:8px 0 16px}
@@ -39,7 +40,7 @@ button:disabled{opacity:.55}
 <body>
 <main>
 <nav>
-<a href="#intro">INTRO</a>
+<a href="#intro" class="active">INTRO</a>
 <a href="#programa">EL PROGRAMA</a>
 <a href="#asistencia">ASISTENCIA</a>
 </nav>
@@ -169,7 +170,31 @@ byId('rsvp').addEventListener('submit',async e=>{
  btn.disabled=false;
  }
 });
+
+// Subrayado automático de la pestaña activa
+const sections=document.querySelectorAll('main section[id]');
+const navLinks=document.querySelectorAll('nav a');
+
+function updateActiveSection(){
+ let current='intro';
+ sections.forEach(section=>{
+  if(section.getBoundingClientRect().top<=110){
+   current=section.id;
+  }
+ });
+ navLinks.forEach(link=>{
+  link.classList.toggle('active',link.getAttribute('href')==='#'+current);
+ });
+}
+
+window.addEventListener('scroll',updateActiveSection,{passive:true});
+window.addEventListener('load',updateActiveSection);
+navLinks.forEach(link=>{
+ link.addEventListener('click',()=>{
+  navLinks.forEach(item=>item.classList.remove('active'));
+  link.classList.add('active');
+ });
+});
 </script>
 </body>
 </html>
-
