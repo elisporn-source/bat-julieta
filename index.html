@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Julieta | Mi Bat Mitzvá</title>
+<title>Juli | Mi Bat Mitzvá</title>
 <style>
 :root{--rose:#946e70;--ink:#555a52;--paper:#faf5ef;--line:#d9bdb6}
 *{box-sizing:border-box}
@@ -20,11 +20,11 @@ section{scroll-margin-top:65px}
 .section{padding:25px 25px 40px;text-align:center;border-top:1px solid #ead9d0}
 h2,h3{font-weight:400;color:var(--rose)}
 h2{font-size:30px;letter-spacing:2px}
-h3{font-size:25px;margin:8px 0 16px}
-.sub{font-size:15px;line-height:1.8;margin:0 auto 32px;max-width:440px}
-.event{border:1px solid var(--line);border-radius:20px;padding:27px 18px;margin:20px auto;max-width:490px;background:#fffaf6}
+h3{font-size:23px;margin:8px 0 12px}
+.sub{font-size:15px;line-height:1.8;margin:0 auto 25px;max-width:440px}
+.event{border:1px solid var(--line);border-radius:16px;padding:18px 15px;margin:14px auto;max-width:420px;background:#fffaf6}
 .date{font:600 12px Arial,sans-serif;letter-spacing:1.5px;color:var(--rose)}
-.event p{line-height:1.7}
+.event p{line-height:1.5;margin:10px 0}
 .link{color:var(--rose);text-underline-offset:4px}
 .formwrap{max-width:490px;margin:auto;text-align:left}
 .formwrap label{display:block;font:500 14px Arial,sans-serif;margin:20px 0 8px}
@@ -46,7 +46,7 @@ button:disabled{opacity:.55}
 </nav>
 
 <section id="intro" class="hero">
-<img src="invitacion.jpg" alt="Invitación floral al Bat Mitzvá de Julieta">
+<img src="invitacion.jpg" alt="Invitación floral al Bat Mitzvá de Juli">
 <div class="introcopy">
 <p>Me encantaría compartir con vos este momento tan especial.</p>
 <a class="link" href="#programa">Conocé el programa ↓</a>
@@ -55,26 +55,29 @@ button:disabled{opacity:.55}
 
 <section id="programa" class="section">
 <h2>TE ESPERAMOS</h2>
-<p class="sub">Para celebrar juntos el Bat Mitzvá de Julieta</p>
+<p class="sub">Para celebrar juntos el Bat Mitzvá de Juli</p>
+
 <article class="event">
 <div class="date">JUEVES 10 DE DICIEMBRE · 2026</div>
 <h3>Tefilín y desayuno</h3>
 <p>8:15 hs</p>
 <p>Templo Amijai<br>Arribeños 2355, CABA</p>
-<a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Arribe%C3%B1os+2355+CABA" target="_blank">Cómo llegar</a>
+<a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Arribe%C3%B1os+2355+CABA" target="_blank" rel="noopener">Cómo llegar</a>
 </article>
+
 <article class="event">
 <div class="date">VIERNES 11 DE DICIEMBRE · 2026</div>
 <h3>Kabalat Shabat</h3>
 <p>19:00 hs</p>
 <p>Templo Amijai<br>Arribeños 2355, CABA</p>
-<a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Arribe%C3%B1os+2355+CABA" target="_blank">Cómo llegar</a>
+<a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Arribe%C3%B1os+2355+CABA" target="_blank" rel="noopener">Cómo llegar</a>
 </article>
 </section>
 
 <section id="asistencia" class="section">
 <h2>CONFIRMÁ TU ASISTENCIA</h2>
 <p class="sub">Para organizar el desayuno del jueves, te pedimos que completes estos datos.</p>
+
 <div class="formwrap">
 <form id="rsvp">
 <label for="nombre">Nombre y apellido</label>
@@ -116,19 +119,24 @@ button:disabled{opacity:.55}
 
 <div id="thanks" class="thankyou hide">
 <h3>¡Gracias por confirmar! ♡</h3>
-<p>Tu respuesta fue enviada.</p>
-<p>¡Nos vemos en el Bat de Julieta!</p>
+<p>¡Qué lindo que podamos compartir este momento!</p>
 </div>
+
 <p class="small">Usaremos estos datos solamente para organizar el desayuno y el regreso en Combi.</p>
 </div>
 </section>
-<footer class="foot">Con cariño, Julieta ♡</footer>
+
+<footer class="foot">Con cariño, Juli ♡</footer>
 </main>
 
 <script>
 const ENDPOINT='https://script.google.com/macros/s/AKfycbzqZQHwDwOUGILHeo8XhG66xL-Jq1-JCLhO8GkJnvq5RdWoO4hTjgKwe-5m8x1MKFUF/exec';
+
 const byId=id=>document.getElementById(id);
-const asiste=byId('asiste'),buber=byId('buber'),combi=byId('combi'),cantidad=byId('cantidad');
+const asiste=byId('asiste');
+const buber=byId('buber');
+const combi=byId('combi');
+const cantidad=byId('cantidad');
 
 function refresh(){
  const yes=asiste.value==='Sí';
@@ -136,42 +144,47 @@ function refresh(){
  byId('buber-wrap').classList.toggle('hide',!yes);
  cantidad.required=yes;
  buber.required=yes;
+
  const isBuber=yes&&buber.value==='Sí';
  byId('combi-wrap').classList.toggle('hide',!isBuber);
  combi.required=isBuber;
  if(!isBuber)combi.value='';
 }
+
 asiste.addEventListener('change',refresh);
 buber.addEventListener('change',refresh);
 
 byId('rsvp').addEventListener('submit',async e=>{
  e.preventDefault();
- const btn=byId('send'),status=byId('status');
+ const btn=byId('send');
+ const status=byId('status');
  btn.disabled=true;
  status.textContent='Enviando…';
+
  const payload={
- nombre:byId('nombre').value.trim(),
- asiste:asiste.value,
- cantidad:asiste.value==='Sí'?Number(cantidad.value):0,
- buber:asiste.value==='Sí'?buber.value:'No aplica',
- combi:asiste.value==='Sí'&&buber.value==='Sí'?combi.value:'No aplica'
+  nombre:byId('nombre').value.trim(),
+  asiste:asiste.value,
+  cantidad:asiste.value==='Sí'?Number(cantidad.value):0,
+  buber:asiste.value==='Sí'?buber.value:'No aplica',
+  combi:asiste.value==='Sí'&&buber.value==='Sí'?combi.value:'No aplica'
  };
+
  try{
- await fetch(ENDPOINT,{
- method:'POST',
- mode:'no-cors',
- headers:{'Content-Type':'text/plain;charset=utf-8'},
- body:JSON.stringify(payload)
- });
- byId('rsvp').classList.add('hide');
- byId('thanks').classList.remove('hide');
+  await fetch(ENDPOINT,{
+   method:'POST',
+   mode:'no-cors',
+   headers:{'Content-Type':'text/plain;charset=utf-8'},
+   body:JSON.stringify(payload)
+  });
+  byId('rsvp').classList.add('hide');
+  byId('thanks').classList.remove('hide');
  }catch(err){
- status.textContent='No se pudo enviar. Intentá nuevamente.';
- btn.disabled=false;
+  status.textContent='No se pudo enviar. Intentá nuevamente.';
+  btn.disabled=false;
  }
 });
 
-// Subrayado automático de la pestaña activa
+// Subrayado automático de las pestañas
 const sections=document.querySelectorAll('main section[id]');
 const navLinks=document.querySelectorAll('nav a');
 
@@ -189,6 +202,7 @@ function updateActiveSection(){
 
 window.addEventListener('scroll',updateActiveSection,{passive:true});
 window.addEventListener('load',updateActiveSection);
+
 navLinks.forEach(link=>{
  link.addEventListener('click',()=>{
   navLinks.forEach(item=>item.classList.remove('active'));
